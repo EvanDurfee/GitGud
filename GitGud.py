@@ -14,36 +14,39 @@ def confirmYN(r, w):
 		elif "n\n" == line:
 			return False
 		else:
-			print("Please enter y or n: ", end='', flush=True)
+			w.write("Please enter y or n: ")
+			w.flush()
 
 
 def gud(r, w):
-	print('running gud...')
-	print("Gud commit! Add comment (or leave blank): ", end='', flush=True)
+	w.write("Gud commit! Add a comment (or leave blank): ")
+	w.flush()
 	line = r.readline()
-	if line != "\n":
-		print("You gave me: \"" + line[:-1] + "\"")
-	else:
-		print("You gave me nothing!")
 
-	#TODO: sanitize commit messages
+	# if line != "\n":
+	# 	print("You gave me: \"" + line[:-1] + "\"")
+	# else:
+	# 	print("You gave me nothing!")
+
+	#TODO: sanitize commit messages?
+
 
 	commitArgs = ["git", "commit"]
 	if line != "\n":
 		commitArgs += ["-m", line[:-1]]
 
 	argv = commitArgs
-	print(argv)
-	subprocess.call(argv)
+	subprocess.run(argv)
 
 
 
 
 def rekt(r, w):
-	print("Are you sure you wish to git rekt? Y/N: ", end='', flush=True)
+	w.write("Are you sure you wish to git rekt? Y/N: ")
+	w.flush()
 	answer = confirmYN(r, w)
 	if answer:
-		subprocess.call(["git", "reset", "--HEAD"])
+		subprocess.run(["git", "reset", "--hard", "HEAD"])
 
 def spooked():
 	print('spooked')
