@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+
+from GitGud import gud
+import sys
+
+try:
+	gud(sys.stdin, sys.stdout)
+except KeyboardInterrupt:
+	print("\nAborted")

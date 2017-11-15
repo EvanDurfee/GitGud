@@ -3,7 +3,7 @@
 
 
 from unittest import main, TestCase
-from GitGud import gud, rekt, spooked, help
+from GitGud import gud, rekt, spooked, halp
 import sys
 
 class TestNetflix (TestCase):
@@ -19,8 +19,8 @@ class TestNetflix (TestCase):
 		rekt(sys.stdin, sys.stdout)
 		self.assertEqual(1, 1)
 
-	def testHelp(self):
-		help()
+	def testHalp(self):
+		halp()
 		self.assertEqual(1, 1)
 
 

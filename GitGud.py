@@ -39,8 +39,6 @@ def gud(r, w):
 	subprocess.run(argv)
 
 
-
-
 def rekt(r, w):
 	w.write("Are you sure you wish to git rekt? Y/N: ")
 	w.flush()
@@ -51,7 +49,6 @@ def rekt(r, w):
 def spooked():
 	print('spooked')
 
-def help():
+def halp():
 	print('halp')
-	print(sys.argv[0])
 
